@@ -1,0 +1,293 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: rgb(70, 70, 70);
+    font-family: 'comic sans ms', cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+#center-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 85px);
+    grid-template-rows: repeat(8, 85px);
+    margin-top: 40px;
+    background-color: #5B2907;
+    border: 5px solid #5B2907;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #5B2907;
+}
+
+#number-labels {
+    position: absolute;
+    left: -20px;
+    top: 50px;
+    display: grid;
+    grid-template-rows: repeat(8, 85px);
+    height: 560px;
+    color: #BFC1C2;
+    font-weight: bold;
+    font-size: 25px;
+    justify-items: center;
+    align-items: center;
+}
+
+#letter-labels {
+    position: absolute;
+    bottom: -300px;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 85px);
+    height: 560px;
+    color: #BFC1C2;
+    font-weight: bold;
+    font-size: 25px;
+    justify-items: center;
+    align-items: center;
+}
+
+#number-labels,
+#letter-labels {
+    pointer-events: none;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.promotion-panel {
+    display: none;
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    background-color: gray;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px gray;
+    z-index: 2000;
+}
+
+.promotion-title {
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: black;
+}
+
+.promotion-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.promotion-options button {
+    background: none;
+    border: none;
+    font-size: 48px;
+    cursor: pointer;
+    transition: transform 0.2 ease;
+}
+
+.promotion-options button:hover {
+    transform: scale(1.2);
+}
+
+#right-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#info-panel {
+    background-color: gray;
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 220px;
+    box-shadow: 2px 2px 8px gray;
+    height: 510px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 100px;
+}
+
+#game-stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#stopwatch {
+    font-size: 32px;
+    margin: 0;
+    color: black;
+}
+
+#pause-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #333;
+    box-shadow: 1px 1px 8px #333;
+    color: #fff;
+}
+
+#pause-button:hover {
+    background-color: #222;
+    box-shadow: 1px 1px 8px #222;
+    font-weight: bold;
+}
+
+#reset-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(255, 70, 70);
+    box-shadow: 1px 1px 8px rgb(255, 70, 70);
+    color: #fff;
+}
+
+#reset-button:hover {
+    background-color: red;
+    box-shadow: 1px 1px 8px red;
+    font-weight: bold;
+}
+
+#turn-indicator {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+}
+
+#turn-indicator span {
+    cursor: default;
+}
+
+#message-box {
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease;
+    max-height: 2em;
+}
+
+#undo-button {
+    padding: 10px 15px;
+    background-color: #333;
+    border: 5px solid #333;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #333;
+    font-size: 1em;
+    font-family: arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+}
+
+#undo-button:hover {
+    border: 5px solid #222;
+    box-shadow: 1px 1px 10px #222;
+    background-color: #222;
+    font-weight: bold;
+}
+
+#restart-button {
+    padding: 10px 15px;
+    background-color: rgb(255, 70, 70);
+    border: 5px solid rgb(255, 70, 70);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgb(255, 70, 70);
+    font-size: 1em;
+    font-family: arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    border: 5px solid red;
+    box-shadow: 1px 1px 10px red;
+    background-color: red;
+    font-weight: bold;
+}
+
+
+.white-piece {
+    color: #fff;
+    font-size: 70px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px black;
+}
+
+.black-piece {
+    font-size: 70px;
+    cursor: pointer;
+}
+
+.white-text {
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.black-text {
+    color: #000;
+}
+
+.light-square {
+    background-color: #F5DEB3;
+}
+
+.dark-square {
+    background-color: #5B2907;
+}
+
+.selected {
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.highlight-move {
+    border: 5px solid #1E90FF;
+    border-radius: 5px;
+}
+
+.highlight-capture {
+    border: 5px solid #A41603;
+    border-radius: 5px;
+}
+
+.last-move {
+    background-color: rgba(255, 255, 190, 0.4) !important;
+}

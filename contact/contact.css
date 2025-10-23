@@ -1,0 +1,150 @@
+body {
+    background-color: white;
+    font-family: 'Fira Code', monospace;
+    color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px;
+}
+
+#topbar {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    position: fixed;
+    top: -200px;
+    opacity: 0;
+    width: 100%;
+    animation: fromTop 1s ease-out forwards;
+    z-index: 50;
+}
+
+@keyframes fromTop {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+        padding: 25px 0 25px 0;
+    }
+}
+
+#topbar a {
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+#topbar a:hover {
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+.main-container {
+    text-align: center;
+    width: 80%;
+    max-width: 700px;
+    background-color: lightgray;
+    padding-bottom: 40px;
+    box-shadow: 2px 2px 10px gray;
+    border: 1px solid gray;
+    border-radius: 10%;
+}
+
+.header {
+    position: relative;
+    opacity: 0;
+    top: -50px;
+    animation: fromTop2 1s ease-out forwards;
+}
+
+@keyframes fromTop2 {
+    from {
+        opacity: 0;
+        top: -50px;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+.page-title {
+    font-size: 45px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 25px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.contact-item h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.contact-item a,
+.contact-item span {
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #0077ff;
+    text-decoration: underline;
+}
+
+.contact-item:nth-child(1),
+.contact-item:nth-child(3)  {
+    position: relative;
+    left: -100px;
+    opacity: 0;
+    animation: fromLeft 1s ease-out forwards;
+}
+
+@keyframes fromLeft {
+    from {
+        left: -100px;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.contact-item:nth-child(2),
+.contact-item:nth-child(4)  {
+    position: relative;
+    right: -100px;
+    opacity: 0;
+    animation: fromRight 1s ease-out forwards;
+}
+
+@keyframes fromRight {
+    from {
+        right: -100px;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}

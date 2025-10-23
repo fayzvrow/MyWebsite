@@ -1,0 +1,122 @@
+body {
+    background-color: white;
+    font-family: 'Fira Code', monospace;
+    color: black;
+}
+
+#topbar {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    position: fixed;
+    top: -200px;
+    opacity: 0;
+    width: 100%;
+    animation: fromTop 1s ease-out forwards;
+    z-index: 50;
+}
+
+@keyframes fromTop {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+        padding: 25px 0 25px 0;
+    }
+}
+
+#topbar a {
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+#topbar a:hover {
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+#left-section {
+    position: absolute;
+    top: 250px;
+    left: -100px;
+    opacity: 0;
+    animation: fromLeft 1.3s ease-out forwards;
+}
+
+@keyframes fromLeft {
+    from {
+        left: -100px;
+        opacity: 0;
+    }
+    to {
+        left: 175px;
+        opacity: 1;
+    }
+}
+
+#right-section {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+}
+
+#headshot {
+    width: 350px;
+    height: 400px;
+    position: relative;
+    top: 100px;
+    right: -100px;
+    opacity: 0;
+    animation: fromRight 1.1s ease-out forwards;
+}
+
+@keyframes fromRight {
+    from {
+        right: -100px;
+        opacity: 0;
+    }
+    to {
+        right: 150px;
+        opacity: 1;
+    }
+}
+
+#socials {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    gap: 80px;
+    width: 100%;
+    bottom: -100px;
+    opacity: 0;
+    animation: fromBottom 1s ease-out forwards;
+    z-index: 50;
+}
+
+@keyframes fromBottom {
+    from {
+        bottom: -100px;
+        opacity: 0;
+    }
+    to {
+        bottom: 50px;
+        opacity: 1;
+    }
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}

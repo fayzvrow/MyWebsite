@@ -1,0 +1,125 @@
+body {
+    background-color: white;
+    font-family: 'Fira Code', monospace;
+    color: black;
+}
+
+#topbar {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    position: fixed;
+    top: -200px;
+    opacity: 0;
+    width: 100%;
+    animation: fromTop 1s ease-out forwards;
+    z-index: 50;
+}
+
+@keyframes fromTop {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+        padding: 25px 0 25px 0;
+    }
+}
+
+#topbar a {
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+#topbar a:hover {
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+#resume-section {
+    display: flex;
+    justify-content: center;
+}
+
+#resume-frame {
+    position: fixed;
+    width: 1100px;
+    height: 640px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    animation: fromBelow 1.5s ease-out forwards;
+}
+
+@keyframes fromBelow {
+    from {
+        opacity: 0;
+        top: 150px;
+    }
+    to {
+        opacity: 1;
+        top: 90px;
+    }
+}
+
+#button-container {
+    position: absolute;
+    bottom: 10px;
+}
+
+.buttons {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 5px;
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.buttons:hover {
+    background-color: rgb(90, 90, 90);
+}
+
+.buttons:nth-child(1) {
+    position: relative;
+    left: -50px;
+    opacity: 0;
+    animation: fromLeft 1s ease-out forwards;
+}
+
+@keyframes fromLeft {
+    from {
+        left: -50px;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.buttons:nth-child(2) {
+    position: relative;
+    right: -50px;
+    opacity: 0;
+    animation: fromRight 1s ease-out forwards;
+}
+
+@keyframes fromRight {
+    from {
+        right: -50px;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}

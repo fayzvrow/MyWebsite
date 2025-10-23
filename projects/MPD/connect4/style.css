@@ -1,0 +1,149 @@
+body {
+    background-color: lightgray;
+    font-family: 'comic sans ms', cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+#center-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.3em;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(7, 95px);
+    grid-template-rows: repeat(6, 95px);
+    background-color: blue;
+    border: 5px solid blue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgb(0, 0, 200);
+}
+
+.cell {
+    background-color: lightgray;
+    border: 6px solid blue;
+    border-radius: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #333;
+    font-size: 0.8em;
+}
+
+.cell.red {
+    background-color: red;
+}
+
+.cell.yellow {
+    background-color: yellow;
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+#right-panel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#info-box {
+    background-color: gray;
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 200px;
+    box-shadow: 2px 2px 8px #888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 140px;
+}
+
+#turn-indicator {
+   font-size: 1.3em;
+   color: #222; 
+}
+
+#player-name {
+    font-weight: bold;
+    color: red;
+}
+
+#player-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid;
+}
+
+#player-circle.red {
+    background-color: red;
+    border-color: red;
+}
+
+#player-circle.yellow {
+    background-color: yellow;
+    border-color: yellow;
+}
+
+#winner-message {
+    color: black;
+    font-size: 1.3em;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+#winner-message.win {
+    color: green;
+}
+
+.red-text {
+    color: red;
+    font-weight: bold;
+}
+
+.yellow-text {
+    color: yellow;
+    font-weight: bold;
+}
+
+#restart-button {
+    padding: 10px 15px;
+    background-color: rgb(255, 70, 70);
+    border: 5px solid rgb(255, 70, 70);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgb(255, 70, 70);
+    font-size: 1em;
+    font-family: arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    border: 5px solid red;
+    box-shadow: 1px 1px 10px red;
+    background-color: red;
+}

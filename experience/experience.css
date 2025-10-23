@@ -1,0 +1,130 @@
+body {
+    background-color: white;
+    font-family: 'Fira Code', monospace;
+    color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px;
+}
+
+#topbar {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    position: fixed;
+    top: -200px;
+    opacity: 0;
+    width: 100%;
+    animation: fromTop 1s ease-out forwards;
+    z-index: 50;
+}
+
+@keyframes fromTop {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+        padding: 25px 0 25px 0;
+    }
+}
+
+#topbar a {
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+#topbar a:hover {
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+.main-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    padding-bottom: 100px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.experience-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.experience-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.experience-item:hover {
+    background-color: #e7f3ff;
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.job-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.text {
+    flex: 1;
+}
+
+.date {
+    font-style: italic;
+}
+
+.coming-soon {
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border: 2px dashed #99c4f0;
+    color: #333;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.coming-soon:hover {
+    background: linear-gradient(135deg, #e0f2fe, #bee3f8);
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
